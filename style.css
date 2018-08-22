@@ -38,11 +38,14 @@ header {
     text-align: center;
     border-bottom: 1px solid gray;
     margin-top: 0;
+    overflow: hidden;
 }
 
 #top-header h1 {
-    font-size: 2vh;
+    max-height: 50px;
+    font-size: 4vw;
     margin-top: 1.5vh;
+    margin-left: 50px;
     color: white;
     width: 60%;
     display: inline-block;
@@ -97,7 +100,7 @@ main {
 }
 
 .songSampleText {
-    color: rgb(129, 129, 129);
+    color: #595959;
     margin-top: 5px;
     margin-bottom: 5px;
     display: inline-block;
@@ -112,7 +115,7 @@ main {
 }
 
 .songCategory {
-    color: rgb(129, 129, 129);
+    color: #595959;
     margin-top: 5px;
     margin-bottom: 5px;
     max-width: 20%;
