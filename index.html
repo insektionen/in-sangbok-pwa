@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>IN-Sångbok</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+    <div id="top">
+        <header id="top-header">
+            <button id="back-button" onclick="window.history.back()"><img src="images/icons/ic_back.png" alt="back icon"></button>
+            <h1>IN-Sektionens Sångbok</h1>
+            <select id="categorySelector">
+			<option value="All">All</option>
+			<option value="Gasque">Gasque</option>
+			<option value="Öhl">Öhl</option>
+			<option value="Wihn">Wihn</option>
+			<option value="Brännvin">Brännvin</option>
+			<option value="Punsch">Punsch</option>
+			<option value="Utländskt">Utländskt</option>
+			<option value="Nördigt">Nördigt</option>
+			<option value="Esoterica">Esoterica</option>
+			<option value="Högtidligt">Högtidligt</option>
+			</select>
+        </header>
+        <div id="input-holder">
+            <input type="search" name="searchSong" id="searchBox" placeholder="Search for name or text">
+        </div>
+    </div>
+
+    <main></main>
+    <script src="app.js"></script>
+</body>
+
+</html>

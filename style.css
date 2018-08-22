@@ -1,0 +1,128 @@
+body {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    margin: 0 0;
+}
+
+#top {
+    position: fixed;
+    top: 0;
+}
+
+#back-button {
+    position: fixed;
+    left: 0px;
+    height: 50px;
+    width: 50px;
+    background-color: rgb(80, 127, 155);
+    outline: none;
+    border: none;
+}
+
+#back-button img {
+    height: 25px;
+    width: auto;
+}
+
+#back-button button:focus {
+    background-color: rgb(49, 78, 95);
+}
+
+#back-button button:hover {
+    background-color: rgb(49, 78, 95);
+}
+
+header {
+    position: static;
+    width: 100vw;
+    height: 50px;
+    text-align: center;
+    border-bottom: 1px solid gray;
+    margin-top: 0;
+}
+
+#top-header h1 {
+    font-size: 2vh;
+    margin-top: 1.5vh;
+    color: white;
+    width: 60%;
+    display: inline-block;
+    text-shadow: 1px 1px black;
+    padding: 0;
+}
+
+input {
+    margin-top: 10px;
+    height: 2em;
+    width: 80%;
+    margin-left: 10%;
+    background-color: white;
+    font-size: 1.2em;
+    outline: none;
+}
+
+input:focus {
+    border: 1px solid #DDDDDD;
+}
+
+#input-holder {
+    width: 100%;
+    background-color: white;
+}
+
+select {
+    margin-top: 15px;
+    float: right;
+    color: white;
+}
+
+main {
+    margin-top: 110px;
+}
+
+.song {
+    border-bottom: 1px solid gray;
+    padding: 10px;
+    padding-left: 15px;
+}
+
+.song h2 {
+    font-weight: normal;
+}
+
+.songTitle {
+    font-size: 1.5em;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+.songSampleText {
+    color: rgb(129, 129, 129);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+    max-width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    /* "overflow" value must be different from  visible"*/
+    -o-text-overflow: ellipsis;
+    /* Opera < 11*/
+    text-overflow: ellipsis;
+    /* IE, Safari (WebKit), Opera >= 11, FF > 6 */
+}
+
+.songCategory {
+    color: rgb(129, 129, 129);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    max-width: 20%;
+    float: right;
+}
+
+#top-header {
+    background-color: #44687D;
+}
+
+.song-page {
+    border-bottom: 0;
+}
