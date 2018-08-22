@@ -78,6 +78,11 @@ select {
     color: white;
 }
 
+select:focus {
+    outline: none;
+    border: none;
+}
+
 main {
     margin-top: 110px;
 }

@@ -10,6 +10,7 @@ const staticAssets = [
 self.addEventListener('install', async event => {
     const cache = await caches.open('sangbok-static');
     cache.addAll(staticAssets);
+    console.log("install");
 });
 
 // When fetching it will either load from cache or newtork. If online it will load from online etc.
