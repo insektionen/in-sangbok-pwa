@@ -25,47 +25,6 @@ if (isIos() && !isInStandaloneMode()) {
     this.setState({ showInstallMessage: true });
 }
 
-$(document).on("deviceready", function() {
-    $.mobile.hashListeningEnabled = false;
-});
-
-function onDeviceReady() {
-    if (device.platform === "iOS" && parseInt(device.version) === 9) {
-        $.mobile.hashListeningEnabled = false;
-    }
-
-    if (!($.mobile.hashListeningEnabled &&
-            $.mobile.path.isHashValid(location.hash) &&
-            ($(hashPage).is(":jqmData(role='page')") ||
-                $.mobile.path.isPath(hash) ||
-                hash === $.mobile.dialogHashKey))) {
-
-        // make sure to set initial popstate state if it exists
-        // so that navigation back to the initial page works properly
-        if ($.event.special.navigate.isPushStateEnabled()) {
-            $.mobile.navigate.navigator.squash(path.parseLocation().href);
-        }
-
-        $.mobile.changePage($.mobile.firstPage, {
-            transition: "none",
-            reverse: true,
-            changeHash: false,
-            fromHashChange: true
-        });
-    } else {
-        // trigger hashchange or navigate to squash and record the correct
-        // history entry for an initial hash path
-        if (!$.event.special.navigate.isPushStateEnabled()) {
-            $window.trigger("hashchange", [true]);
-        } else {
-            // TODO figure out how to simplify this interaction with the initial history entry
-            // at the bottom js/navigate/navigate.js
-            $.mobile.navigate.history.stack = [];
-            $.mobile.navigate($.mobile.path.isPath(location.hash) ? location.hash : location.href);
-        }
-    }
-}
-
 // Takes care of all events.
 window.addEventListener("load", async e => {
     await window.history.pushState({ page: "list" }, '')
@@ -95,14 +54,13 @@ window.addEventListener("load", async e => {
 });
 
 
-
 // Takes care of the 
 window.addEventListener('popstate', function(event) {
     if (event.state == null) {
-        if (device.platform === "iOS" && parseInt(device.version) === 9) {
+        if (device.platform === "iOS") {
             console.log("version" + device.version);
             console.log("iOS 9");
-            history.go(0);
+            updateList();
         } else {
             window.history.back();
         }
