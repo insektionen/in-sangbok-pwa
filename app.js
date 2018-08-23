@@ -12,6 +12,18 @@ var songList;
 var xmlDoc;
 var allSongsHTML;
 
+// Detects if device is on iOS 
+const isIos = () => {
+        const userAgent = window.navigator.userAgent.toLowerCase();
+        return /iphone|ipad|ipod/.test(userAgent);
+    }
+    // Detects if device is in standalone mode
+const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+
+// Checks if should display install popup notification:
+if (isIos() && !isInStandaloneMode()) {
+    this.setState({ showInstallMessage: true });
+}
 
 // Takes care of all events.
 window.addEventListener("load", async e => {
@@ -41,23 +53,12 @@ window.addEventListener("load", async e => {
     }
 });
 
-// Detects if device is on iOS 
-const isIos = () => {
-        const userAgent = window.navigator.userAgent.toLowerCase();
-        return /iphone|ipad|ipod/.test(userAgent);
-    }
-    // Detects if device is in standalone mode
-const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
 
-// Checks if should display install popup notification:
-if (isIos() && !isInStandaloneMode()) {
-    this.setState({ showInstallMessage: true });
-}
 
 // Takes care of the 
 window.addEventListener('popstate', function(event) {
     if (event.state == null) {
-        window.history.back(1);
+        window.history.go(0);
     }
     console.log(event.state);
     updateList();
