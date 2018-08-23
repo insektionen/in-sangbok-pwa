@@ -58,7 +58,7 @@ window.addEventListener("load", async e => {
 // Takes care of the 
 window.addEventListener('popstate', function(event) {
     if (event.state == null) {
-        window.history.go(0);
+        window.history.go(-1);
     }
     console.log(event.state);
     updateList();
