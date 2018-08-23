@@ -75,12 +75,14 @@ if (location.hash) hashchange();
 
 // Takes care of the 
 window.addEventListener('popstate', function(event) {
+
     if (event.state == null) {
         //history.go(0);
     }
     console.log(event.state);
     var pageId = location.hash.substr(1);
     if (pageId < i) {
+        alert('back');
         updateList();
     }
 })
