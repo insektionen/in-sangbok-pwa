@@ -22,6 +22,7 @@ const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.n
 
 // Checks if should display install popup notification:
 if (isIos() && !isInStandaloneMode()) {
+    alert('This world is on FIRE!!!');
     main.innerHTML = main.innerHTML + `
         <div style="position: fixed; width: 80%; height: 40px; bottom: 20px;left:20%; background-color: white;">
             <p>Install this app by tapping: <img src="images/icons/ic_iphone.png"> and then <img src="images/icons/ic_add.png"></p>
