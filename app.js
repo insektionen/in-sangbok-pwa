@@ -25,6 +25,10 @@ if (isIos() && !isInStandaloneMode()) {
     this.setState({ showInstallMessage: true });
 }
 
+$(document).on("deviceready", function() {
+    $.mobile.hashListeningEnabled = false;
+});
+
 function onDeviceReady() {
     if (device.platform === "iOS" && parseInt(device.version) === 9) {
         $.mobile.hashListeningEnabled = false;
