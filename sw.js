@@ -3,7 +3,12 @@ const staticAssets = [
     './',
     './style.css',
     './app.js',
-    './utils.js'
+    './utils.js',
+    './themes/in-sangbok-pwa.min.css',
+    './themes/jquery-1.11.1.min.js',
+    './themes/jquery.mobile-1.4.5.min.js',
+    './themes/jquery.mobile.icons.min.css',
+    './themes/jquery.mobile.structure-1.4.5.min.css'
 ];
 
 // When installing the application it will cache the static assets.

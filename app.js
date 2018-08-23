@@ -33,17 +33,13 @@ window.addEventListener("load", async e => {
 
     if ('serviceWorker' in navigator) {
         try {
-            navigator.serviceWorker.register('https://sangbok.insektionen.se/sw.js');
+            navigator.serviceWorker.register('sw.js');
             console.log("ServiceWorker Registered");
         } catch (error) {
             console.log("ServiceWorker was not registered, error: " + error.target.value);
         }
     }
 });
-
-function test() {
-    console.log("hej");
-}
 
 // Takes care of the 
 window.addEventListener('popstate', function(event) {

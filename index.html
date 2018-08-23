@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
     <link rel="manifest" href="manifest.json">
 
-    <link rel="stylesheet" href="themes/in-sangbok-pwa.css" />
+    <link rel="stylesheet" href="themes/in-sangbok-pwa.min.css" />
     <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
 
     <link rel="stylesheet" href="themes/jquery.mobile.structure-1.4.5.min.css" />
@@ -23,7 +23,7 @@
     <div data-role="page" data-theme="a">
         <div id="top">
             <div data-role="header" data-position="inline">
-                <button onclick="window.history.back()" data-icon="arrow-r" class="ui-btn-left ui-btn-corner-all ui-btn ui-icon-home ui-btn-icon-notext ui-shadow"></button>
+                <button onclick="window.history.back()" data-icon="arrow-r" class="ui-btn-left ui-btn-corner-all ui-btn ui-icon-home ui-btn-icon-notext ui-shadow" aria-hidden="true">Home Button</button>
                 <h1 class="ui-title">IN-Sångbok</h1>
                 <div class="ui-btn-right">
                     <select id="categorySelector">
