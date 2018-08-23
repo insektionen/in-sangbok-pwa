@@ -8,34 +8,46 @@
     <meta name="theme-color" content="#44687d" />
     <title>IN-Sångbok</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="themes/in-sangbok-pwa.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 
 <body>
-    <div id="top">
-        <header id="top-header">
-            <button id="back-button" onclick="window.history.back()"><img src="images/icons/ic_back.png" alt="back icon"></button>
-            <h1>IN-Sektionens Sångbok</h1>
-            <select id="categorySelector">
-			<option value="All">All</option>
-			<option value="Gasque">Gasque</option>
-			<option value="Öhl">Öhl</option>
-			<option value="Wihn">Wihn</option>
-			<option value="Brännvin">Brännvin</option>
-			<option value="Punsch">Punsch</option>
-			<option value="Utländskt">Utländskt</option>
-			<option value="Nördigt">Nördigt</option>
-			<option value="Esoterica">Esoterica</option>
-			<option value="Högtidligt">Högtidligt</option>
-			</select>
-        </header>
-        <div id="input-holder">
-            <input type="search" name="searchSong" id="searchBox" placeholder="Search for name or text">
+    <div data-role="page" data-theme="a">
+        <div id="top">
+            <div data-role="header" data-position="inline">
+                <button onclick="window.history.back()" data-icon="arrow-r" class="ui-btn-left ui-btn-corner-all ui-btn ui-icon-home ui-btn-icon-notext ui-shadow"></button>
+                <h1 class="ui-title">IN-Sångbok</h1>
+                <div class="ui-btn-right">
+                    <select id="categorySelector">
+                        <option value="All">All</option>
+                        <option value="Gasque">Gasque</option>
+                        <option value="Öhl">Öhl</option>
+                        <option value="Wihn">Wihn</option>
+                        <option value="Brännvin">Brännvin</option>
+                        <option value="Punsch">Punsch</option>
+                        <option value="Utländskt">Utländskt</option>
+                        <option value="Nördigt">Nördigt</option>
+                        <option value="Esoterica">Esoterica</option>
+                        <option value="Högtidligt">Högtidligt</option>
+                        </select>
+                </div>
+            </div>
+            <div id="input-holder">
+                <input type="search" name="searchSong" id="searchBox" placeholder="Search for name or text">
+            </div>
+        </div>
+        <div data-role="content" data-theme="a">
+            <main></main>
         </div>
     </div>
-
-    <main></main>
     <script src="app.js"></script>
 </body>
 

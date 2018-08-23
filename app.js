@@ -24,8 +24,11 @@ window.addEventListener("load", async e => {
         updateSongs(e.target.value);
     });
 
-    search.addEventListener('keyup', e => {
+    $("#searchBox").keydown(function(e) {
         searchSong(e.target.value);
+    });
+    $(".ui-input-clear").click(function() {
+        main.innerHTML = allSongsHTML;
     });
 
     if ('serviceWorker' in navigator) {
@@ -37,6 +40,10 @@ window.addEventListener("load", async e => {
         }
     }
 });
+
+function test() {
+    console.log("hej");
+}
 
 // Takes care of the 
 window.addEventListener('popstate', function(event) {

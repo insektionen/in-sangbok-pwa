@@ -6,52 +6,68 @@ body {
 #top {
     position: fixed;
     top: 0;
+    width: 100%;
 }
 
-#back-button {
-    position: fixed;
-    left: 0px;
-    height: 50px;
-    width: 50px;
-    background-color: rgb(80, 127, 155);
-    outline: none;
-    border: none;
+main {
+    margin-top: 80px;
 }
 
-#back-button img {
-    height: 25px;
-    width: auto;
+input {
+    width: 80%;
+    margin-left: 10%;
+    background-color: white;
 }
 
-#back-button button:focus {
-    background-color: rgb(49, 78, 95);
+#input-holder {
+    margin-top: -8px;
+    width: 100%;
+    height: auto;
+    background-color: white;
 }
 
-#back-button button:hover {
-    background-color: rgb(49, 78, 95);
-}
-
-header {
-    position: static;
-    width: 100vw;
-    height: 50px;
-    text-align: center;
+.song {
     border-bottom: 1px solid gray;
-    margin-top: 0;
-    overflow: hidden;
+    padding-left: 15px;
 }
 
-#top-header h1 {
-    max-height: 50px;
-    font-size: 4vw;
-    margin-top: 1.5vh;
-    margin-left: 50px;
-    color: white;
-    width: 60%;
-    display: inline-block;
-    text-shadow: 1px 1px black;
-    padding: 0;
+.song h2 {
+    font-weight: normal;
 }
+
+.songTitle {
+    font-size: 1.2em;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+.songSampleText {
+    color: #595959;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+    max-width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.songCategory {
+    color: #595959;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    max-width: 20%;
+    float: right;
+}
+
+.song-page {
+    border-bottom: 0;
+}
+
+
+/* 
 
 input {
     margin-top: 10px;
@@ -83,9 +99,7 @@ select:focus {
     border: none;
 }
 
-main {
-    margin-top: 110px;
-}
+
 
 .song {
     border-bottom: 1px solid gray;
@@ -112,11 +126,8 @@ main {
     max-width: 60%;
     white-space: nowrap;
     overflow: hidden;
-    /* "overflow" value must be different from  visible"*/
     -o-text-overflow: ellipsis;
-    /* Opera < 11*/
     text-overflow: ellipsis;
-    /* IE, Safari (WebKit), Opera >= 11, FF > 6 */
 }
 
 .songCategory {
@@ -127,10 +138,12 @@ main {
     float: right;
 }
 
+.song-page {
+    border-bottom: 0;
+}
+
 #top-header {
     background-color: #44687D;
 }
 
-.song-page {
-    border-bottom: 0;
-}
+ */
