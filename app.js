@@ -51,13 +51,7 @@ window.addEventListener("load", async e => {
 
     // Checks if should display install popup notification:
     if (isIos() && !isInStandaloneMode()) {
-        setTimeout(function() {
-            main.innerHTML = await main.innerHTML + `
-            <div style="position: fixed; width: 80%; height: 40px; bottom: 70px;left:20%; background-color: white; border-radius: 20px;">
-                <p>Install this app by tapping: <img src="images/icons/ic_iphone.png" height="20px" width="auto"> and then <img src="images/icons/ic_add.png" height="20px" width="auto"></p>
-            </div>
-            `;
-        }, 3000);
+        //Do something!
     }
 });
 
