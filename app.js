@@ -33,7 +33,7 @@ window.addEventListener("load", async e => {
 
     if ('serviceWorker' in navigator) {
         try {
-            navigator.serviceWorker.register('sw.js');
+            navigator.serviceWorker.register('https://sangbok.insektionen.se/sw.js');
             console.log("ServiceWorker Registered");
         } catch (error) {
             console.log("ServiceWorker was not registered, error: " + error.target.value);
