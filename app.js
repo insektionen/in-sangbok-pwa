@@ -53,20 +53,36 @@ window.addEventListener("load", async e => {
     }
 });
 
+var i = 0;
+var locationUpdateInterval = setInterval(function() {
+    window.location.hash = i;
+    i++;
+}, 1000);
+
+// named function on purpose for later
+function hashchange() {
+    var pageId = location.hash.substr(1); // drop the # symbol
+    // do something with pageId
+    console.log(pageId);
+}
+if (false) {
+    window.onhashchange = hashchange;
+}
+
+// onload - if there's a hash on the url, try to do something with it
+if (location.hash) hashchange();
+
 
 // Takes care of the 
 window.addEventListener('popstate', function(event) {
     if (event.state == null) {
-        if (device.platform === "iOS") {
-            console.log("version" + device.version);
-            console.log("iOS 9");
-            history.go(0);
-        } else {
-            window.history.back();
-        }
+        //history.go(0);
     }
     console.log(event.state);
-    updateList();
+    var pageId = location.hash.substr(1);
+    if (pageId < i) {
+        updateList();
+    }
 })
 
 // Loads the songs from github XML file.
