@@ -12,6 +12,23 @@ var songList;
 var xmlDoc;
 var allSongsHTML;
 
+// Detects if device is on iOS 
+const isIos = () => {
+        const userAgent = window.navigator.userAgent.toLowerCase();
+        return /iphone|ipad|ipod/.test(userAgent);
+    }
+    // Detects if device is in standalone mode
+const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+
+// Checks if should display install popup notification:
+if (isIos() && !isInStandaloneMode()) {
+    main.innerHTML = main.innerHTML + `
+        <div style="position: fixed; width: 80%; height: 40px; bottom: 20px;left:20%; background-color: white;">
+            <p>Install this app by tapping: <img src="images/icons/ic_iphone.png"> and then <img src="images/icons/ic_add.png"></p>
+        </div>
+    `;
+}
+
 // Takes care of all events.
 window.addEventListener("load", async e => {
     await window.history.pushState({ page: "list" }, '')
@@ -42,7 +59,6 @@ window.addEventListener("load", async e => {
 
 // Takes care of the 
 window.addEventListener('popstate', function(event) {
-
     if (event.state == null) {
         history.go(0);
     }
