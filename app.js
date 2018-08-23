@@ -12,23 +12,7 @@ var songList;
 var xmlDoc;
 var allSongsHTML;
 
-// Detects if device is on iOS 
-const isIos = () => {
-        const userAgent = window.navigator.userAgent.toLowerCase();
-        return /iphone|ipad|ipod/.test(userAgent);
-    }
-    // Detects if device is in standalone mode
-const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
 
-// Checks if should display install popup notification:
-if (isIos() && !isInStandaloneMode()) {
-    alert('This world is on FIRE!!!');
-    main.innerHTML = main.innerHTML + `
-        <div style="position: fixed; width: 80%; height: 40px; bottom: 20px;left:20%; background-color: white;">
-            <p>Install this app by tapping: <img src="images/icons/ic_iphone.png"> and then <img src="images/icons/ic_add.png"></p>
-        </div>
-    `;
-}
 
 // Takes care of all events.
 window.addEventListener("load", async e => {
@@ -55,6 +39,24 @@ window.addEventListener("load", async e => {
         } catch (error) {
             console.log("ServiceWorker was not registered, error: " + error.target.value);
         }
+    }
+
+    // Detects if device is on iOS 
+    const isIos = () => {
+            const userAgent = window.navigator.userAgent.toLowerCase();
+            return /iphone|ipad|ipod/.test(userAgent);
+        }
+        // Detects if device is in standalone mode
+    const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+
+    // Checks if should display install popup notification:
+    if (isIos() && !isInStandaloneMode()) {
+        alert('This world is on FIRE!!!');
+        main.innerHTML = main.innerHTML + `
+    <div style="position: fixed; width: 80%; height: 40px; bottom: 20px;left:20%; background-color: white;">
+        <p>Install this app by tapping: <img src="images/icons/ic_iphone.png"> and then <img src="images/icons/ic_add.png"></p>
+    </div>
+`;
     }
 });
 
