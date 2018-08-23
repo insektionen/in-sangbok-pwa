@@ -60,7 +60,7 @@ window.addEventListener('popstate', function(event) {
         if (device.platform === "iOS") {
             console.log("version" + device.version);
             console.log("iOS 9");
-            updateList();
+            history.go(0);
         } else {
             window.history.back();
         }
