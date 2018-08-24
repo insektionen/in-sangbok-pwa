@@ -12,8 +12,6 @@ var songList;
 var xmlDoc;
 var allSongsHTML;
 
-
-
 // Takes care of all events.
 window.addEventListener("load", async e => {
     await window.history.pushState({ page: "list" }, '')
@@ -55,7 +53,7 @@ window.addEventListener("load", async e => {
     }
 });
 
-// Takes care of the 
+// Takes care of the pop of page
 window.addEventListener('popstate', function(event) {
     if (event.state == null) {
         history.go(0);
@@ -165,23 +163,21 @@ function showSong(songTitle) {
 function createSongPage(song, allText) {
     var html = `
             <div class="song song-page">
-            <div id="songInfo">
-                <h2>${song.getAttribute("name")}</h2>
-                <p id="songPageCategory">${song.getAttribute("category")}</p>
+                <div id="songInfo">
+                    <h2>${song.getAttribute("name")}</h2>
+                    <p id="songPageCategory">${song.getAttribute("category")}</p>
 				`;
     if (song.getAttribute("author") != null && song.getAttribute("author") != "") {
         html = html + `
-				<p id="songAuthor">by ${song.getAttribute("author")}</p>
+				    <p id="songAuthor">by ${song.getAttribute("author")}</p>
 		`;
     }
     if (song.getAttribute("melody") != null && song.getAttribute("melody") != "") {
         html = html + `
-				<p id="songMelody">Melody: ${song.getAttribute("melody")}`;
+				    <p id="songMelody">Melody: ${song.getAttribute("melody")}`;
     }
     if (song.getAttribute("composer") != null && song.getAttribute("composer") != "") {
-        html = html + `
-				(${song.getAttribute("composer")})
-		`;
+        html = html + `(${song.getAttribute("composer")})`;
     }
     html = html + `</p>
             </div>
