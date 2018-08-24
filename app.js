@@ -138,7 +138,8 @@ function filter(part) {
 
 // Shows the selected song.
 function showSong(songTitle) {
-    window.history.pushState({ page: "song" }, '')
+    window.history.pushState({ page: "song" }, '');
+    window.scrollTo(0, 0);
     var song;
 
     for (let i = 0; i < songs.length; i++) {
