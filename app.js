@@ -164,7 +164,8 @@ function showSong(songTitle) {
 function createSongPage(song, allText) {
     var html = `
     		<div class="song song-page">
-				<h2>${song.getAttribute("name")}</h2>
+                <h2>${song.getAttribute("name")}</h2>
+                <p id="songPageCategory">${song.getAttribute("category")}</p>
 				`;
     if (song.getAttribute("author") != null && song.getAttribute("author") != "") {
         html = html + `

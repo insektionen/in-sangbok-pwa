@@ -43,7 +43,7 @@ input {
 }
 
 .songSampleText {
-    color: #595959;
+    color: #707070;
     margin-top: 5px;
     margin-bottom: 5px;
     display: inline-block;
@@ -55,7 +55,7 @@ input {
 }
 
 .songCategory {
-    color: #595959;
+    color: #707070;
     margin-top: 5px;
     margin-bottom: 5px;
     max-width: 20%;
@@ -64,4 +64,34 @@ input {
 
 .song-page {
     border-bottom: 0;
+}
+
+.song-page comment {
+    color: cadetblue;
+    font-style: italic;
+}
+
+.song-page header {
+    font-weight: bold;
+}
+
+#songMelody {
+    font-style: italic;
+    color: #707070;
+}
+
+#songAuthor {
+    color: #707070;
+}
+
+.song-page h2 {
+    display: inline-block;
+    width: 80%;
+}
+
+#songPageCategory {
+    width: 20%;
+    float: right;
+    margin-top: 1.7em;
+    color: #707070;
 }
