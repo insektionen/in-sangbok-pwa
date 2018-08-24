@@ -163,7 +163,8 @@ function showSong(songTitle) {
 // Generates the html for the song page.
 function createSongPage(song, allText) {
     var html = `
-    		<div class="song song-page">
+            <div class="song song-page">
+            <div id="songInfo">
                 <h2>${song.getAttribute("name")}</h2>
                 <p id="songPageCategory">${song.getAttribute("category")}</p>
 				`;
@@ -182,6 +183,7 @@ function createSongPage(song, allText) {
 		`;
     }
     html = html + `</p>
+            </div>
 				${allText}
 			</div>
 	`;

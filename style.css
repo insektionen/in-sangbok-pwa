@@ -26,6 +26,10 @@ input {
     background-color: white;
 }
 
+.ui-input-search {
+    border-radius: 0;
+}
+
 .song {
     border-bottom: 1px solid gray;
     padding-left: 15px;
@@ -87,11 +91,17 @@ input {
 .song-page h2 {
     display: inline-block;
     width: 80%;
+    margin-top: 0.5em;
+    margin-bottom: 0;
 }
 
 #songPageCategory {
     width: 20%;
     float: right;
-    margin-top: 1.7em;
+    margin-top: 1em;
     color: #707070;
+}
+
+#songInfo {
+    margin-bottom: 2em;
 }
